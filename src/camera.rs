@@ -2,7 +2,7 @@ use opencv::{highgui, imgcodecs, prelude::*, videoio};
 
 use crate::AppError;
 
-pub fn get_camera_frame(input_width: i32, input_height: i32) -> Result<(), AppError> {
+pub fn get_camera_frame(_input_width: i32, _input_height: i32) -> Result<(), AppError> {
     println!("📷 カメラを起動中...");
 
     let mut cam = videoio::VideoCapture::new(0, videoio::CAP_ANY)?;
@@ -24,7 +24,7 @@ pub fn get_camera_frame(input_width: i32, input_height: i32) -> Result<(), AppEr
         // 映像表示
         highgui::imshow(window, &frame)?;
         let key = highgui::wait_key(1)?;
-        let mut frame_count = 0;
+        let frame_count = 0;
 
         if key == 27 {
             break;
