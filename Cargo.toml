@@ -1,0 +1,8 @@
+[package]
+name = "rust_onnx_inference"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ort = { version = "1.15.0", features = ["download-binaries"] }
+ndarray = "0.15"
