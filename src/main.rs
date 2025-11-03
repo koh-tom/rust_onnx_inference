@@ -4,6 +4,8 @@ use ort::{Environment, GraphOptimizationLevel, LoggingLevel, SessionBuilder, Val
 use std::sync::Arc;
 use thiserror::Error;
 
+mod camera;
+
 // アプリケーションエラーの定義
 #[derive(Error, Debug)]
 
@@ -17,6 +19,7 @@ enum AppError {
 }
 
 fn main() -> Result<(), AppError> {
+    camera::get_camera_frame(640, 640)?;
     println!("📦 モデルの読み込み中...");
 
     // 1. onnxの環境を作成
