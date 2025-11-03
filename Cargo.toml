@@ -6,3 +6,10 @@ edition = "2024"
 [dependencies]
 ort = { version = "1.15.0", features = ["download-binaries"] }
 ndarray = "0.15"
+opencv = { version = "0.88.8", default-features = false, features = [
+    "highgui",
+    "videoio",
+    "imgcodecs",
+    "imgproc",
+] }
+thiserror = "1.0"
